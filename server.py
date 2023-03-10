@@ -10,10 +10,7 @@ import uuid
 SIZE = 1024
 FORMAT = "utf-8"
 DISCONNECT_MSG = "!DISCONNECT"
-
 client_registry = []
-
-
 instruction_queue = deque()
 
 
@@ -37,7 +34,8 @@ def handle_client(conn, addr):
 
     conn.close()
     
-
+#search for instructions for specific client
+#a client(address and port) is looking if there is any message for itself
 def lookForIns(address, port):
     found = False
     data = ""
