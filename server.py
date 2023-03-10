@@ -29,7 +29,6 @@ def handle_client(conn, addr):
         found,data = lookForIns(addr[0],addr[1])
 
         if(found):
-            print(data)
             conn.send(data.encode(FORMAT))            
 
     conn.close()
